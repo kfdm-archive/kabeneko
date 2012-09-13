@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <meta http-equiv="refresh" content="60">
+        <style type="text/css">
+            body{
+                font-family: Terminal, monospace;
+                margin: auto;
+            }
+            #happy {
+                background-color: green;
+            }
+            #sad {
+                background-color: red;
+            }
+            #worried {
+                background-color: orange;
+            }
+            img {
+                position: absolute;
+                top: 25%;
+                right: 25%;
+                left: 25%;
+                max-height: 200px;
+                max-width: 200px;
+            }
+            .content h1{
+                position: absolute;
+                font-size:72;
+                font-weight: bold;
+                text-align: center;
+                top: 50%;
+                right: 25%;
+                left: 25%;
+            }
+            table {
+                font-size: 32pt;
+                margin:auto ;
+                border-spacing: 8pt;
+            }
+        </style>
+    </head>
+{% block body %}
+{% endblock %}
+</html>

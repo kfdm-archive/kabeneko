@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}TeamCity is WORRIED :({% endblock %}
+
+{% block body %}
+<body id="worried">
+    <div class="content">
+        <h1>TeamCity is Worried :( </h1>
+        <img src="/static/{{ cats.worried }}" />
+    <div>
+    <table>
+        <tr>
+            <th>Group</th>
+            <th>Project</th>
+            <th>Build</th>
+        <tr>
+    {% for project in investigation %}
+        <tr>
+            <td>{{ project.group }}</td>
+            <td>{{ project.project }}</td>
+            <td>{{ project.build }}</td>
+            <td>{{ project.status }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}TeamCity is SAD :({% endblock %}
+
+{% block body %}
+<body id="sad">
+    <div class="content">
+	    <h1>TeamCity is SAD :( </h1>
+	    <img src="/static/{{ cats.sad }}" />
+    <div>
+    <table>
+        <tr>
+            <th>Group</th>
+            <th>Project</th>
+            <th>Build</th>
+        <tr>
+    {% for project in failures %}
+        <tr>
+            <td>{{ project.group }}</td>
+            <td>{{ project.project }}</td>
+            <td>{{ project.build }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+{% endblock %}

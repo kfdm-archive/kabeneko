@@ -1,0 +1,10 @@
+setup.py
+TeamcityCat/__init__.py
+TeamcityCat/settings.py
+TeamcityCat/web.py
+Teamcity_Cat.egg-info/PKG-INFO
+Teamcity_Cat.egg-info/SOURCES.txt
+Teamcity_Cat.egg-info/dependency_links.txt
+Teamcity_Cat.egg-info/entry_points.txt
+Teamcity_Cat.egg-info/requires.txt
+Teamcity_Cat.egg-info/top_level.txt
