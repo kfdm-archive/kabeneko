@@ -4,7 +4,7 @@ import time
 import logging
 import glob
 import os
-from TeamcityCat import settings
+from kabeneko import settings
 from providers.teamcity import TeamCity
 
 logger = logging.getLogger(__name__)
