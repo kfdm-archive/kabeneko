@@ -18,7 +18,7 @@ class TeamCity(object):
             req = requests.get(self.host)
 
             if req.status_code is not 200:
-                raise IOError("Error loading feed")
+                raise requests.ConnectionError("Error loading feed")
 
             content = """<?xml version="1.0" encoding="UTF-8"?><root>%s</root>""" % req.text.replace('&', '&amp;')
             doc = ET.fromstring(content)
@@ -58,6 +58,13 @@ class TeamCity(object):
                     else:
                         failures.append(entry)
 
+        except requests.ConnectionError:
+            logger.exception("Error polling site")
+            investigation.append({
+                'project': 'TeamCity',
+                'build': '?',
+                'group': '?'
+                })
         except Exception, e:
             logger.exception('Exception found while loading feeds')
             failures.append({
