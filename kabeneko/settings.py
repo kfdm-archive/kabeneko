@@ -1,4 +1,5 @@
 import logging
+import os
 from ConfigParser import RawConfigParser
 
 logger = logging.getLogger(__name__)
@@ -16,11 +17,11 @@ DEFAULTS = {
 class Config(object):
     def __init__(self, path=None):
         self.config = RawConfigParser()
-        if path:
+        if os.path.exists(path):
             logger.info('Loading settings from %s', path)
             self.config.read(path)
         else:
-            logger.info('Using default settings')
+            logger.warning('Error loading settings from %s', path)
 
     def defaults(self):
         return {
