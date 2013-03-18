@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 
-from kabeneko import settings
 from kabeneko.providers.teamcity import TeamCity
 from kabeneko.images import Cats
 
@@ -9,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    tc = TeamCity(settings.TEAMCITY_WIDGET)
+    tc = TeamCity(app.config.settings.get('teamcity.url'))
 
     successes, investigation, failures = tc.poll()
 
