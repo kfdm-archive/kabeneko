@@ -12,7 +12,8 @@ setup(
     install_requires=['Flask', 'argparse', 'requests'],
     entry_points={
         'console_scripts': [
-            'tc-cat = kabeneko.web:main',
+            'wallcat = kabeneko.cli:main',
+            'kabeneko = kabeneko.cli:main',
         ]
     }
 )
